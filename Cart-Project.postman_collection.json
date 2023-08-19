@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "04cabf9e-2b9f-49cc-8b19-1651516f560d",
+		"name": "Cart-Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26293454"
+	},
+	"item": [
+		{
+			"name": "user-register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"amit@demo.com\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/user-register",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"user-register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"amit@demo.com\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/user-login",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"user-login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"ggggggggggggggggggggggggggg Men And Women, 3D Digital Printed Short Sleeved T-Shirt\",\r\n    \"short_des\": \"2023 Men And Women, 3D Digital Printed Short Sleeved T-Shirt, Unisex Casual Sportswear, Summer Top, Size 9\",\r\n    \"price\": 500,\r\n    \"discount\": 30,\r\n    \"discount_price\": 50,\r\n    \"image\": \"https://ae01.alicdn.com/kf/Sb566672e11df441c9e96443d725fbf0eL/2023-Men-And-Women-3D-Digital-Printed-Short-Sleeved-T-Shirt-Unisex-Casual-Sportswear-Summer-Top.jpg_640x640.jpg\",\r\n    \"stock\": \"Yes\",\r\n    \"star\": \"20\",\r\n    \"remark\": \"Good\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/create-product",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"create-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/get-all-products",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"get-all-products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_email\": \"amit@demo.com\",\r\n    \"product_id\": \"64dfa9a9172559c2e1a585db\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/create-cart",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"create-cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart-list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/cart-list",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"cart-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/delete-cart/64dfa85d30ae5e0547e4b089",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"delete-cart",
+						"64dfa85d30ae5e0547e4b089"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTI0NTcyMDEsImRhdGEiOiJhbWl0QGRlbW8uY29tIiwiaWF0IjoxNjkyMzcwODAxfQ.NIWyv4ktH9cYQuUcPPHESDWkqZ5aaxfOg4Dl32LRn0s",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseURL",
+			"value": "http://localhost:5000/api",
+			"type": "string"
+		}
+	]
+}
