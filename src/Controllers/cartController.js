@@ -17,7 +17,6 @@ exports.createCart = async (req, res) => {
 exports.getAllCartList = async (req, res) => {
   let reqBody = req.body;
   let email = reqBody.user_email;
-  console.log(email);
   try {
     let data = await cartModel.aggregate([
       { $match: { user_email: email } },

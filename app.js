@@ -35,11 +35,10 @@ const limiter = rateLimit({
 app.use(limiter);
 
 //! Database
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); 
 
 //! Database Connect
 const URL = `mongodb+srv://${process.env.MONGODB_USER_NAME}:${process.env.MONGODB_USER_PASSWORD}@cluster0.fsp0qs4.mongodb.net/Cart-Project?retryWrites=true&w=majority`;
-
 
 mongoose.connect(
   URL,
