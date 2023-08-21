@@ -18,8 +18,10 @@ exports.login = async (req, res) => {
     let reqBody = req.body;
 
     let data = await userModel.aggregate(
-      [{ $match: reqBody }, { $project: { _id: 1, email: 1, img: 1 } }],
+      [{ $match: reqBody }, { $project: { _id: 1, email: 1 } }],
+
       (error, data) => {
+        console.log(data);
         if (data.length > 0) {
           let Payload = {
             exp: Math.floor(Date.now() / 1000) + 24 * 60 * 60,
@@ -38,5 +40,3 @@ exports.login = async (req, res) => {
     res.status(200).json({ status: "error", error: e });
   }
 };
-
-

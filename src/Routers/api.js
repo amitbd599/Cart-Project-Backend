@@ -10,10 +10,14 @@ const router = express.Router();
 router.post("/user-register", userController.register);
 
 //! ================ Login User Api =================
-router.get("/user-login", userController.login);
+router.post("/user-login", userController.login);
 
 //! ================ Create product Api =================
-router.post("/create-product", productController.createProduct);
+router.post(
+  "/create-product",
+  AuthVerifyMiddleware,
+  productController.createProduct
+);
 
 //! ================ Get All Product Api =================
 router.get("/get-all-products", productController.getAllProducts);
@@ -25,6 +29,10 @@ router.post("/create-cart", AuthVerifyMiddleware, cartController.createCart);
 router.post("/cart-list", AuthVerifyMiddleware, cartController.getAllCartList);
 
 //! ================ Delete Project Api =================
-router.delete("/delete-cart/:id",AuthVerifyMiddleware,  cartController.deleteCart);
+router.delete(
+  "/delete-cart/:id",
+  AuthVerifyMiddleware,
+  cartController.deleteCart
+);
 
 module.exports = router;
